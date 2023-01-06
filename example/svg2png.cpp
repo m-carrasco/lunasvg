@@ -61,6 +61,7 @@ int main(int argc, char** argv)
     f1.close();
 
     auto document = Document::loadFromData(buffer, size);
+    free(buffer);
     if (!document){
         std::cout << "Document::loadFromFile failed" << std::endl;
         return help(2);
